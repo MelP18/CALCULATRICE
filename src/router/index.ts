@@ -6,7 +6,6 @@ import SignUp from '@/views/SignUp.vue'
 import ActivateAccountComponent from '@/views/ActivateAccount.vue'
 import UserLayout from '@/layout/UserLayout.vue'
 import AuthLayout from '@/layout/AuthLayout.vue'
-import Profile from '@/views/user/Profile.vue'
 import Logout from '@/views/user/Logout.vue'
 import Historique from '@/views/user/Historique.vue'
 import ErrorPage from '@/views/ErrorPage.vue'
@@ -58,15 +57,8 @@ const router = createRouter({
                     path: '',
                     name: 'Home',
                     component: UserInterface,
-                    /*  beforeEnter:[function blocked (to,from){
-                         return ('/signup')
-                       }], */
-                }/* ,
-                {
-                    path: 'profile',
-                    name: 'Profile',
-                    component: Profile
-                } */,
+                    
+                },
                 {
                     path: 'logout',
                     name: 'Logout',

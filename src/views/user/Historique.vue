@@ -1,35 +1,12 @@
 <template>
     <div class="block">
-        <div class="profil">
-            <div class="user__main__title">
-                <h1>PROFILE</h1>
-                <hr>
-            </div>
-            <div class="main">
-                <div class="user__info" v-if="userData">
-                    <div class="user__email">
-                        <h4>Avatar</h4>
-                        <img :src="avatarUrl(userData.avatar)" alt="avatar">
-                    </div>
-                    <div class="user__username">
-                        <h4>Pseudonime</h4>
-                        <p>{{ userData.username }}</p>
-                    </div>
-                    <div class="user__email">
-                        <h4>E-mail</h4>
-                        <p>{{ userData.email }}</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
         <div class="calcul">
-            <div class="user__calculation">
-                <h1>Historique des calculs</h1>
+            <div class="user__main__title">
+                <h1>HISTORIQUE</h1>
                 <hr>
             </div>
             <div class="main__table">
-                <table v-if="userCalculation">
+                <table v-if="userCalculation.length !== 0">
                     <thead>
                         <tr>
                             <th> Jours </th>
@@ -68,18 +45,10 @@ console.log(userCalculation);
 const { getCalculation } = userOpeationStore()
 getCalculation()
 
-const avatarUrl = (path:String)=>{
-    return `http://localhost:4000/avatars/${path}`;
-}
 
 </script>
 
 <style scoped>
-.block{
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
 .main__table {
     overflow-x: auto;
     padding-bottom: 15px;
@@ -108,7 +77,6 @@ thead th {
     font-weight: bold;
 }
 
-
 tbody tr td {
     padding: 5px;
     letter-spacing: 2px;
@@ -122,14 +90,7 @@ tbody tr td {
     display: flex;
     gap: 15px;
 }
-
-.user__calculation h1 {
-    font-size: 16px;
-    color: var(--primary-color);
-    margin-bottom: 5px;
-    /* border-bottom: 1px solid; */
-}
-.calcul{
+.calcul {
     display: flex;
     flex-direction: column;
     gap: 15px;
