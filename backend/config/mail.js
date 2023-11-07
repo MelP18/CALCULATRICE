@@ -8,7 +8,7 @@ const mail = {
     
     send: async function(subject,body, code){
         await mailer.sendMail({
-            from:"no_reply@gmail.com",
+            from:"rmissimawu@gmail.com",
             to:this.email,
             subject: subject,
             text:body + code   ,
