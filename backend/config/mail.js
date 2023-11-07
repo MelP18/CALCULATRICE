@@ -8,10 +8,10 @@ const mail = {
     
     send: async function(subject,body, code){
         await mailer.sendMail({
-            from:"rmissimawu@gmail.com",
+            from:"gsnmelp@gmail.com",
             to:this.email,
             subject: subject,
-            text:body + code   ,
+            text:body + code,
             
         })
     }     
